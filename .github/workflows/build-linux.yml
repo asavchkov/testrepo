@@ -14,7 +14,8 @@ on:
 
 jobs:
 
-  format('REL_{0}_STABLE', matrix.pg_version):
+  build-linux:
+    name: ${{ format('REL_{0}_STABLE', matrix.pg_version) }}
 
     strategy:
       matrix:
