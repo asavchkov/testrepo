@@ -19,13 +19,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04]
-        pg_version: [13, 14]
+        pg_version: [13, 14, 15]
 
     runs-on:
       - ubuntu-20.04
 
     env:
-      PG_BRANCH: REL_${{ matrix.pg_version }}_STABLE
+      PG_BRANCH: ${{ matrix.pg_version == 15 && 'master' || 'REL_${{ matrix.pg_version }}_STABLE' }}
 
     steps:
 
