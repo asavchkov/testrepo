@@ -1,0 +1,41 @@
+name: Build Probackup on Linux
+
+on:
+  push:
+    branches:
+      - "**"
+  # Runs triggered by pull requests are disabled to prevent executing potentially unsafe code from public pull requests
+  # pull_request:
+  #   branches:
+  #     - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+
+  build-linux:
+
+    example_matrix:
+      strategy:
+        matrix:
+          os: [ubuntu-20.04]
+          pg_branch: [REL_14_STABLE]
+
+    runs-on:
+      - ubuntu-20.04
+
+    env:
+      PG_BRANCH: ${{ matrix.pg_branch }}
+
+     steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: |
+          echo "PG_BRANCH=$PG_BRANCH"
+          cd travis
+          ./make_dockerfile.sh
+          docker-compose build
+
