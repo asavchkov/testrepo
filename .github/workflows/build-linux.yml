@@ -16,11 +16,10 @@ jobs:
 
   build-linux:
 
-    example_matrix:
-      strategy:
-        matrix:
-          os: [ubuntu-20.04]
-          pg_branch: [REL_14_STABLE]
+    strategy:
+      matrix:
+        os: [ubuntu-20.04]
+        pg_branch: [REL_14_STABLE]
 
     runs-on:
       - ubuntu-20.04
