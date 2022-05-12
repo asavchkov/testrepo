@@ -14,7 +14,7 @@ on:
 
 jobs:
 
-  build-linux:
+  'build-linux${{ matrix.pg_version }}':
 
     strategy:
       matrix:
