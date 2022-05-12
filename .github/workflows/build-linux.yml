@@ -27,7 +27,7 @@ jobs:
     env:
       PG_BRANCH: ${{ matrix.pg_branch }}
 
-     steps:
+    steps:
 
       - uses: actions/checkout@v2
 
