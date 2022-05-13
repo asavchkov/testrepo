@@ -28,7 +28,7 @@ jobs:
       matrix:
         os: [ubuntu-20.04]
 #        pg_version: [10, 13, 14, 15]
-        pg_version: ${{ fromJSON(github.event.inputs.logLevel) }}
+        pg_version: ${{ fromJSON(github.event.inputs.logLevel || '[10, 13, 14, 15]') }}
 
     runs-on:
       - ubuntu-20.04
