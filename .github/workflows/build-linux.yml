@@ -12,12 +12,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: '[10, 13, 14, 15]'
-      tags:
-        description: 'Test scenario tags'  
+      build_versions:
+        description: 'build versions'
+        default: '10, 13, 14, 15'
 
 jobs:
 
@@ -28,7 +25,7 @@ jobs:
       matrix:
         os: [ubuntu-20.04]
 #        pg_version: [10, 13, 14, 15]
-        pg_version: ${{ fromJSON(github.event.inputs.logLevel || '[10, 13, 14, 15]') }}
+        pg_version: ${{ fromJSON(github.event.inputs.build_versions && format('[{0}]', github.event.inputs.build_versions) || '[10, 13, 14, 15]') }}
 
     runs-on:
       - ubuntu-20.04
