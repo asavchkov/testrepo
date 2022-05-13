@@ -13,21 +13,15 @@ on:
   workflow_dispatch:
     inputs:
       build_versions:
-        description: 'build versions'
-        default: '10, 13, 14, 15'
-      environment:
-        type: environment
-        description: Select the environment
-      boolean:
-        type: boolean
-        description: True or False
-      choice:
+        description: Build versions
+        default: 10, 13, 14, 15
+      test_mode:
         type: choice
-        description: Make a choice
+        description: Test mode
         options:
-        - foo
-        - bar
-        - baz
+        - BASIC
+        - CATCHUP
+        - FULL
 
 jobs:
 
