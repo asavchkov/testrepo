@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Build Docker image
-        run: 'id'
+        run: 'id; sudo apt update; sudo apt install -y libssl-dev'
 
   test:
     name: good-job
