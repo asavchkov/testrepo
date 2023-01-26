@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Build Docker image
-        run: 'sleep 60; true'
+        run: 'id'
 
   test:
     name: good-job
