@@ -35,3 +35,13 @@ jobs:
       - name: Build Docker image
         run: 'true'
 
+  test:
+    name: good-job
+
+    runs-on:
+      - ubuntu-20.04
+
+    steps:
+      - name: Build Docker image
+        run: 'true'
+
