@@ -26,7 +26,7 @@ on:
 jobs:
 
   build-linux:
-    name: good-job
+    name: good-job-sleep
 
     runs-on:
       - ubuntu-20.04
