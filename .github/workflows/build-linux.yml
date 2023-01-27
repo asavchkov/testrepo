@@ -25,12 +25,10 @@ on:
 
 jobs:
   testjob:
-    name: ${{ format('pg_probackup ({0}, v{1})', 'ubuntu-22.04', aaa) }}
+    name: ${{ format('pg_probackup ({0}, v{1})', 'ubuntu-22.04', 'aaa') }}
     runs-on:
-      - ubuntu-latest
+      - windows-2022
     steps:
       - name: Simple
-        run: id
-      - name: Echo
-        run: echo ${{ runner.name }}
+        run: dir "C:\Program Files (x86)\Microsoft Visual Studio\2022"
 
