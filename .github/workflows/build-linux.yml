@@ -25,7 +25,7 @@ on:
 
 jobs:
   testjob:
-    name: ${{ format('pg_probackup ({0}, v{1})', 'ubuntu-22.04', 'aaa') }}
+    name: ${{ format('pg_probackup ({0}, v{1})', 'ubuntu-22.04', aaa) }}
     runs-on:
       - ubuntu-latest
     steps:
