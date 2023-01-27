@@ -1,4 +1,4 @@
-name: Build Probackup on Linux
+name: Test workflow
 
 on:
   push:
@@ -24,24 +24,13 @@ on:
         - FULL
 
 jobs:
-
-  build-linux:
-    name: good-job-sleep
-
+  testjob:
+    name: ${{ format('pg_probackup ({0}, v{1})', 'ubuntu-22.04', 'aaa') }}
     runs-on:
-      - ubuntu-20.04
-
+      - ubuntu-latest
     steps:
-      - name: Build Docker image
-        run: 'id; sudo apt update; sudo apt install -y libssl-dev'
-
-  test:
-    name: good-job
-
-    runs-on:
-      - ubuntu-20.04
-
-    steps:
-      - name: Build Docker image
-        run: 'true'
+      - name: Simple
+        run: id
+      - name: Echo
+        run: echo ${{ runner.name }}
 
