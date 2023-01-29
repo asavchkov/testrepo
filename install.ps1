@@ -1,3 +1,3 @@
-echoz "Hello!!!" || throw
+echoz "Hello!!!"
 echo "World!"
 
