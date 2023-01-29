@@ -1,1 +1,3 @@
-echo "Hello!" && echo "World!"
+echo "Hello!!!" || throw
+echo "World!"
+
