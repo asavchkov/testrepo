@@ -1,4 +1,1 @@
-"check root"
-$PSScriptRoot
-"end check root"
-
+echo "Hello!" && echo "World!"
