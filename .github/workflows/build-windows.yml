@@ -29,9 +29,13 @@ jobs:
     name: bad-job
 
     runs-on:
-      - ubuntu-20.04
+      - windows-2022
 
     steps:
+      - uses: actions/checkout@v2
+      - name: ls
+        run: ls
+
       - name: Build Docker image
-        run: 'false'
+        run: .\install.ps1
 
