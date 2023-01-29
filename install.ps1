@@ -1,3 +1,3 @@
-echoz "Hello!!!"
+write-error "Hello!!!"
 echo "World!"
 
